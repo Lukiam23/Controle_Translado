@@ -11,4 +11,13 @@ app.use(bodyParser.json());
 const usuariosRoutes = require('./routes/usuarioRoutes')
 app.use('/',usuariosRoutes);
 
+const veiculoRoutes = require('./routes/veiculoRoutes')
+app.use('/',veiculoRoutes);
+
+const destinoRoutes = require('./routes/destinoRoutes')
+app.use('/',destinoRoutes);
+
+const transladoRoutes = require('./routes/transladoRoutes')
+app.use('/',transladoRoutes);
+
 module.exports = app;

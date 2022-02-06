@@ -1,7 +1,7 @@
 const db = require('../infra/database');
 
 exports.getUsuarios = function (){
-	return db.query('select * from usuarios');
+	return db.query('select * tipo from usuarios');
 }
 
 exports.postUsuario = function (usuario){
