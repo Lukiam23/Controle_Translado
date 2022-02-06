@@ -8,7 +8,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-const usuariosRoutes = require('./routes/usuarioRoute')
+const usuariosRoutes = require('./routes/usuarioRoutes')
 app.use('/',usuariosRoutes);
 
 module.exports = app;
