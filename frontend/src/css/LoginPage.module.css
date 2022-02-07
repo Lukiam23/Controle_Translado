@@ -1,0 +1,38 @@
+.Container{
+	position: absolute;
+	display: flex;
+	background: #3498db;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.loginContainer{
+	position: relative;
+	box-sizing: border-box;
+	margin: 15% auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 500px;
+	height: 200px;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0 0 3px 2px rgb(0, 0, 0);
+	
+}
+
+.loginContainer input{
+	display: block;
+	margin: 10px auto;
+}
+
+.Link{
+	position: absolute;
+	bottom: 20px;
+	color: black;
+	text-decoration-line: none;
+	text-decoration-color: none;
+	cursor: pointer;
+}
