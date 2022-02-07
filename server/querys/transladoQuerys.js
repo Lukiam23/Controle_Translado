@@ -5,6 +5,6 @@ exports.getTranslados = function (){
 }
 
 exports.postTranslado = function (translado){
-	const {data, turno, veiculoId, destinoId} = translado;
-	return db.result(`INSERT INTO translados(transladoId, data, turno, veiculoId, destinoId) values(DEFAULT, '${data}', '${turno}', ${veiculoId}, ${destinoId});`, [123], r => r.rowCount);
+	const {data, turno, veiculoId, destinoId, login} = translado;
+	return db.result(`INSERT INTO translados(transladoId, data, turno, veiculoId, destinoId, login) values(DEFAULT, '${data}', '${turno}', ${veiculoId}, ${destinoId}, '${login}');`, [123], r => r.rowCount);
 }

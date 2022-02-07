@@ -7,6 +7,11 @@ router.get('/usuarios', async function (req,res){
 	res.json(usuarios);
 });
 
+router.get('/usuario', async function (req,res){
+	const usuario = await usuarioService.getUsuarioByLogin(req.body);
+	res.json(usuario);
+});
+
 router.post('/usuario', async function (req,res){
 	const usuario = await usuarioService.postUsuario(req.body);
 	res.json(usuario);

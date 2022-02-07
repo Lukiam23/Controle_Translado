@@ -3,9 +3,8 @@ CREATE DATABASE unichristus;
 CREATE EXTENSION pgcrypto;
 
 CREATE TABLE Usuarios(
-	usuarioId SERIAL PRIMARY KEY,
+	login Text NOT NULL PRIMARY KEY,
 	nome Text NOT NULL,
-	login Text NOT NULL UNIQUE,
 	senha Text NOT NULL,
 	tipo VARCHAR(13) NOT NULL CHECK (tipo = 'aluno' or tipo = 'administrador')
 );
@@ -27,18 +26,18 @@ CREATE TABLE Translados(
 	transladoId SERIAL PRIMARY KEY,
 	data DATE,
 	turno Text,
-	usuarioId SERIAL,
+	login Text,
 	veiculoId SERIAL,
 	destinoId SERIAL,
 	CONSTRAINT foreignVeiculo
 		FOREIGN KEY(veiculoId)
 			REFERENCES Veiculos(veiculoId) ON DELETE CASCADE,
 	CONSTRAINT foreignUsuario
-		FOREIGN KEY(usuarioId)
-			REFERENCES Usuarios(usuarioId) ON DELETE CASCADE,
+		FOREIGN KEY(login)
+			REFERENCES Usuarios(login) ON DELETE CASCADE,
 	CONSTRAINT foreignDestino
 		FOREIGN KEY(destinoId)
-			REFERENCES Destino(destinoId) ON DELETE CASCADE
+			REFERENCES Destinos(destinoId) ON DELETE CASCADE
 
 );
 
