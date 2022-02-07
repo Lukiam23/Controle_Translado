@@ -1,9 +1,18 @@
 import styles from '../css/CadastroUsuarioPage.module.css';
 import { useForm } from "react-hook-form";
 
+const axios = require('axios')
+
 export default function CadastroUsuarioPage(){
 	const {register, handleSubmit, formState: { errors } } = useForm();
-	const onSubmit = data => console.log(data);
+	const onSubmit = async function(usuario){
+		const response = await axios({
+			url:'http://localhost:3001/usuario',
+			method: 'POST',
+			data:{...usuario}
+		});
+		console.log(response)
+	};
 
 	return(
 		<div className={styles.Container}>
