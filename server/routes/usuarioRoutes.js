@@ -8,7 +8,12 @@ router.get('/usuarios', async function (req,res){
 });
 
 router.get('/usuario', async function (req,res){
-	const usuario = await usuarioService.getUsuarioByLogin(req.body);
+	const data = {
+		login:req.query.login,
+		senha:req.query.senha
+	}
+	console.log(data)
+	const usuario = await usuarioService.getUsuarioByLogin(data);
 	res.json(usuario);
 });
 

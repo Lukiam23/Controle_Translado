@@ -8,7 +8,7 @@ exports.getUsuarioByLogin = async function(usuario){
     return await usuarioQuerys.getUsuarioByLogin(usuario)
     .then(data =>{
         if(data.length === 1){
-            return true
+            return data
         }
 
         return false
