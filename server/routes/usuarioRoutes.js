@@ -12,7 +12,6 @@ router.get('/usuario', async function (req,res){
 		login:req.query.login,
 		senha:req.query.senha
 	}
-	console.log(data)
 	const usuario = await usuarioService.getUsuarioByLogin(data);
 	res.json(usuario);
 });

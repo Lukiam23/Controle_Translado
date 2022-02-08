@@ -2,9 +2,6 @@ import './App.css';
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginPage from './pages/LoginPage.jsx';
 import HomePage from './pages/HomePage.jsx';
-import CadastroUsuarioPage from './pages/CadastroUsuarioPage.jsx';
-import CadastroVeiculoPage from './pages/CadastroVeiculoPage.jsx';
-import CadastroDestinoPage from './pages/CadastroDestinoPage.jsx';
 import UsuarioContext from './pages/UsuarioContext';
 
 function App() {
@@ -13,11 +10,8 @@ function App() {
       <UsuarioContext >
         <Router>
           <Routes>
-             <Route path='login' element={<LoginPage />}/>
-             <Route path='home/cadastro/usuario' element={<CadastroUsuarioPage />}/>
-             <Route path='home/cadastro/veiculo' element={<CadastroVeiculoPage />}/>
-             <Route path='home/cadastro/destino' element={<CadastroDestinoPage />}/>
-             <Route path='home' element={<HomePage />}/>
+             <Route exact path='/' element={<LoginPage />}/>
+             <Route path='home/*' element={<HomePage />}/>
           </Routes>
         </Router>
       </UsuarioContext>

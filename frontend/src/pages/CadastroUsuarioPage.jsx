@@ -8,7 +8,7 @@ const axios = require('axios')
 
 export default function CadastroUsuarioPage(){
 	const {usuario, setUsuario} = useUsuarioContext();
-	const {register, handleSubmit, setError, formState: { errors } } = useForm();
+	const {register, handleSubmit, reset, setError, formState: { errors } } = useForm();
 	const [existLogin, setExistLogin] = useState(false);
 	const navigate = useNavigate();
 
@@ -19,7 +19,8 @@ export default function CadastroUsuarioPage(){
 			data:{...usuario}
 		});
 		if(response.data === "Usuario criado"){
-			navigate("/home")
+			alert("Usuário criado!")
+			reset()
 		} else if(response.data === "Login já existente"){
 			setExistLogin(true)
 		} 
@@ -40,7 +41,7 @@ export default function CadastroUsuarioPage(){
 					<input type="text" style={ existLogin ? redBorder : {}} className={styles.checkButton} placeholder="Login" {...register("login", { required: true })}/>
 					{errors.login && <span>Login é obrigatório</span>}
 					<span style={existLogin ? {} :{'display': "none"}}>Login já existe</span>
-					<input type="text" placeholder="Senha" {...register("senha", { required: true })}/>
+					<input type="password" placeholder="Senha" {...register("senha", { required: true })}/>
 					{errors.senha && <span>Senha é obrigatória</span>}
 					<select name="tipo" {...register("tipo")}>
 						<option value="aluno">Aluno</option>
