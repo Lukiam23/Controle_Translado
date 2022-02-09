@@ -1,7 +1,7 @@
 const promise = require('pg-promise')();
 const db = promise({
 		user: 'postgres', 
-		password: '12345',
+		password: '',
 		host: 'localhost',
 		port: 5432,
 		database:'unichristus'
