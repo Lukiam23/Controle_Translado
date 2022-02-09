@@ -6,7 +6,7 @@ exports.getTranslados = function (){
 
 exports.getTransladosByLogin = function (dados){
 	const {login} = dados
-	return db.query(`select * from translados where login = '${login}'`);
+	return db.query(`select * from translados t inner join veiculos v on t.veiculoid = v.veiculoid inner join destinos as d on d.destinoid = t.destinoid where login = '${login}'`);
 }
 
 exports.getUsuarioTranslados = function (dados){
