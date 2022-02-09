@@ -15,9 +15,9 @@ export default function LoginPage(){
 	
 	const onSubmit = async function(usuario){
 		const response = await axios({
-			url:'http://localhost:3001/usuario',
-			method: 'GET',
-			params:{...usuario}
+			url:'http://localhost:3001/loginusuario',
+			method: 'POST',
+			data:{...usuario}
 		});
 		if(response.data === false){
 			setError(true);

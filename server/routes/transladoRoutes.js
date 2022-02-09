@@ -12,4 +12,9 @@ router.post('/translado', async function (req,res){
 	res.json(translado);
 });
 
+router.post('/usuariotranslado', async function (req,res){
+	const numero = await transladoService.getUsuarioTranslados(req.body);
+	res.json(numero);
+});
+
 module.exports = router

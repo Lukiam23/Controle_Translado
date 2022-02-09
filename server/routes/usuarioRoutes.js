@@ -7,12 +7,8 @@ router.get('/usuarios', async function (req,res){
 	res.json(usuarios);
 });
 
-router.get('/usuario', async function (req,res){
-	const data = {
-		login:req.query.login,
-		senha:req.query.senha
-	}
-	const usuario = await usuarioService.getUsuarioByLogin(data);
+router.post('/loginusuario', async function (req,res){
+	const usuario = await usuarioService.getUsuarioByLogin(req.body);
 	res.json(usuario);
 });
 

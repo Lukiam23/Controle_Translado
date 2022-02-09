@@ -37,3 +37,8 @@ nav{
 	height: 100%;
 
 }
+
+.link:active{
+	transform: scale(0.99);
+	background: #2970a9;
+}

@@ -35,6 +35,7 @@ export default function CadastroUsuarioPage(){
 	return(
 		<div className={styles.Container}>
 			<div className={styles.formContainer}>
+				<h1>Cadastrar Usuário</h1>
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<input type="text" placeholder="Nome" {...register("nome", { required: true })}/>
 					{errors.nome && <span>Nome é obrigatório</span>}

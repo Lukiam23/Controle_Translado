@@ -7,13 +7,8 @@ router.get('/veiculos', async function (req,res){
 	res.json(veiculos);
 });
 
-router.get('/veiculosviaveis', async function (req,res){
-	const dados = {
-		data:req.query.data,
-		turno:req.query.turno
-	}
-	
-	const veiculos = await veiculoService.getVeiculosViaveis(dados);
+router.post('/veiculosviaveis', async function (req,res){
+	const veiculos = await veiculoService.getVeiculosViaveis(req.body);
 	res.json(veiculos);
 });
 

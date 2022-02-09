@@ -9,7 +9,7 @@ const axios = require('axios')
 export default function CadastroVeiculoPage(){
 	const {usuario, setUsuario} = useUsuarioContext();
 	const navigate = useNavigate();
-	const {register, handleSubmit, setError, formState: { errors } } = useForm();
+	const {register, handleSubmit, reset, setError, formState: { errors } } = useForm();
 	const onSubmit = async function(veiculo){
 		const response = await axios({
 			url:'http://localhost:3001/veiculo',
@@ -17,7 +17,8 @@ export default function CadastroVeiculoPage(){
 			data:{...veiculo}
 		});
 		if(response.data === "Veículo criado"){
-			navigate("/home")
+			alert("Veículo criado!");
+			reset();
 		} 
 	};
 
@@ -26,6 +27,7 @@ export default function CadastroVeiculoPage(){
 	return(
 		<div className={styles.Container}>
 			<div className={styles.formContainer}>
+				<h1>Cadastrar Veículo</h1>
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<input type="text" placeholder="Descriçao" {...register("descricao", { required: true })}/>
 					{errors.descricao && <span>O campo descrição é obrigatório</span>}

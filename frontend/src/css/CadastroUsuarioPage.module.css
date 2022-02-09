@@ -11,10 +11,10 @@
 .formContainer{
 	position: relative;
 	box-sizing: border-box;
-	margin: 15% auto;
-	display: flex;
+	
+	display: block;
+	text-align: center;
 	align-items: center;
-	justify-content: center;
 	width: 650px;
 	height: 350px;
 	background: white;

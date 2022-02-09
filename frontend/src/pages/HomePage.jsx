@@ -4,11 +4,11 @@ import styles from '../css/HomePage.module.css'
 import CadastroUsuarioPage from './CadastroUsuarioPage.jsx';
 import CadastroVeiculoPage from './CadastroVeiculoPage.jsx';
 import CadastroDestinoPage from './CadastroDestinoPage.jsx';
+import CriarTransladoPage from './CriarTransladoPage.jsx';
 import { useState, useEffect } from "react";
 
 export default function HomePage(){
 	const navigate = useNavigate();
-	const [display, setDisplay] = useState(null);
 	const {usuario, setUsuario} = useUsuarioContext();
 
 	const logout = () =>{
@@ -22,9 +22,11 @@ export default function HomePage(){
 				<header>
 					<label>Olá, {usuario.nome}</label>
 					<nav>
-						<div onClick={logout} className={styles.link}>Logout</div>
+						<div onClick={logout} className={styles.link}>Sair</div>
 					</nav>
 				</header>
+
+				<CriarTransladoPage />
 
 			
 			</>
@@ -43,7 +45,7 @@ export default function HomePage(){
 						<Link to='/home' className={styles.link} >Cadastrar Usuário</Link>
 						<Link to='cadastro/veiculo' className={styles.link} >Cadastrar Veículo</Link>
 						<Link to='cadastro/destino' className={styles.link} >Cadastrar Destino</Link>
-						<div onClick={logout} className={styles.link}>Logout</div>
+						<div onClick={logout} className={styles.link}>Sair</div>
 					</nav>
 				</header>
 

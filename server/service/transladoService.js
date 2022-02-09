@@ -2,8 +2,17 @@ const transladoQuerys = require('../querys/transladoQuerys')
 
 
 exports.getTranslados = async function() {
-	return await destinoQuerys.getTranslados()
-}
+	return await transladoQuerys.getTranslados()
+};
+
+exports.getUsuarioTranslados = async function (dados){
+    return await transladoQuerys.getUsuarioTranslados(dados)
+            .then(data => data > 0)
+            .catch(error =>{
+                return error
+            })
+
+};
 
 
 exports.postTranslado = async function(translado) {
@@ -14,5 +23,4 @@ exports.postTranslado = async function(translado) {
     .catch(error =>{
     	return error
     })
-
-}
+};
