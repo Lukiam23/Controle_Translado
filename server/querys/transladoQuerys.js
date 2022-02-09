@@ -4,6 +4,10 @@ exports.getTranslados = function (){
 	return db.query('select * from translados');
 }
 
+exports.getTransladosByLogin = function (dados){
+	const {login} = dados
+	return db.query(`select * from translados where login = '${login}'`);
+}
 
 exports.getUsuarioTranslados = function (dados){
 	const {login, turno, data} = dados

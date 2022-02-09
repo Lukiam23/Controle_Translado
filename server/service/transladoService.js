@@ -14,6 +14,10 @@ exports.getUsuarioTranslados = async function (dados){
 
 };
 
+exports.getTransladosByLogin = async function (dados){
+    return await transladoQuerys.getTransladosByLogin(dados);
+};
+
 
 exports.postTranslado = async function(translado) {
 	return await transladoQuerys.postTranslado(translado)

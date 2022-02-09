@@ -5,6 +5,7 @@ import CadastroUsuarioPage from './CadastroUsuarioPage.jsx';
 import CadastroVeiculoPage from './CadastroVeiculoPage.jsx';
 import CadastroDestinoPage from './CadastroDestinoPage.jsx';
 import CriarTransladoPage from './CriarTransladoPage.jsx';
+import ListarTransladosPage from './ListarTransladosPage.jsx';
 import { useState, useEffect } from "react";
 
 export default function HomePage(){
@@ -18,17 +19,19 @@ export default function HomePage(){
 
 	if(usuario.tipo === 'aluno'){
 		return(
-			<>      
+			<>    
+				<Routes>
+				 <Route path='/' element={<CriarTransladoPage />}/>
+				 <Route path='/translados' element={<ListarTransladosPage />}/>
+				</Routes>  
 				<header>
 					<label>Olá, {usuario.nome}</label>
 					<nav>
+						<Link to='/home' className={styles.link} >Criar Translado</Link>
+						<Link to='translados' className={styles.link} >Listar Translados</Link>
 						<div onClick={logout} className={styles.link}>Sair</div>
 					</nav>
-				</header>
-
-				<CriarTransladoPage />
-
-			
+				</header>			
 			</>
 		);
 	} else if(usuario.tipo === 'administrador'){

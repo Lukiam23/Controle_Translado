@@ -12,8 +12,7 @@ CREATE TABLE Usuarios(
 CREATE TABLE Veiculos(
 	veiculoId SERIAL PRIMARY KEY,
 	descricao Text NOT NULL,
-	ocupacaoMax INT NOT NULL,
-	quantidadeOcupado INT
+	ocupacaoMax INT NOT NULL
 );
 
 CREATE TABLE Destinos(
