@@ -1,4 +1,4 @@
-.Container{
+.ContainerCenter{
 	position: absolute;
 	display: flex;
 	background: #3498db;
@@ -6,4 +6,9 @@
 	height: 100%;
 	align-items: center;
 	justify-content: center;
+}
+
+.ContainerContent{
+	display: block;
+	width: 700px;
 }

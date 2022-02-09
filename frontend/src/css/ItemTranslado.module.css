@@ -1,3 +1,16 @@
 .itemContainer{
-	
+	background: white;
+	width: 100%;
+	height: 50px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	margin: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0px 4px 8px 0px rgba(1,0,0,.8);
+}
+
+.itemContainer label{
+	margin-left: 55px;
 }
